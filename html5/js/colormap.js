@@ -5,12 +5,13 @@ grass = "rgb(110, 184, 107)";
 tree = "rgb(103, 131, 102)";
 mountain = "rgb(160, 160, 160)";
 snow = "rgb(230, 230, 230)";
+
 // takes a number from 0 to 100 and assigns a color to it
 function getColor(val)
 {
-	if (val < 35) return deep;
-	if (val < 50) return shallow;
-	if (val < 55) return beach;
+	if (val < 20) return deep;
+	if (val < 40) return shallow;
+	if (val < 50) return beach;
 	if (val < 70) return grass;
 	if (val < 80) return tree;
 	if (val < 90) return mountain;

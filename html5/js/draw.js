@@ -31,10 +31,11 @@ function drawGrid()
     {
     	for (var y = 0; y * (size + offset) < h; y++)
     	{
-    		var val = (noise.layerSimplex((x_loc + x) * res, (y_loc + y) * res) + 1) / 2 * 255;
+            //generates a value from 0 to 100
+    		var val = (noise.layerSimplex((x_loc + x) * res, (y_loc + y) * res) + 1) / 2 * 100;
     		val = parseInt(val);
 
-    		ctx.fillStyle = 'rgb(' +val+', '+val+','+ val +')';
+    		ctx.fillStyle = getColor(val);
     		// ctx.strokeStyle = 'rgb(100,100,100)';
     		// ctx.fillStyle = 'green';
     		ctx.fillRect(x * (size + offset) , y * (size + offset), size, size);
