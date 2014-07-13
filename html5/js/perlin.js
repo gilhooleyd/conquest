@@ -58,12 +58,14 @@
     this.scale = scale;
   };
 
+  // generic octave method
+
   module.layerSimplex = function(x, y)
   {
     var roughness = this.roughness;
     var octaves = this.octaves;
     var noiseSum = 0.0;
-    var layerWeight = 1.0;
+    var layerWeight = 10;
     var weightSum = 0.0;
     var scale = this.scale;
 
@@ -76,6 +78,23 @@
     }
     return noiseSum / weightSum;
   }
+
+  // attempt at sin functions
+
+  // module.layerSimplex = function(x, y)
+  // {
+  //   return sin(x, y) * 2;
+  // }
+
+  // module.layerSimplex = function(x, y)
+  // {
+  //   var roughness = this.roughness;
+  //   var ocataves = this.octaves;
+  //   var scale = this.scale;
+  //   var val = 0.0
+
+  //   val += this.simplex2(x * scale, y + scale)
+  // }
 
   // This isn't a very good seeding function, but it works ok. It supports 2^16
   // different seed values. Write something better if you need more seeds.

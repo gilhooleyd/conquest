@@ -3,6 +3,10 @@ console.log("draw");
 x_loc = 0;
 y_loc = 0;
 
+size = 20;
+offset = 3;
+var res = .05;
+
 function drawGrid() 
 {
 	noise.seed(0);
@@ -10,7 +14,7 @@ function drawGrid()
   var canvas = document.getElementById('canvas');
   if (canvas.getContext) 
   {
-  	var ctx = canvas.getContext('2d');
+  	 ctx = canvas.getContext('2d');
     ctx.fillStyle = 'rgb(0,0,0)';
     var w = canvas.width ;
     var h = canvas.height;
@@ -18,9 +22,7 @@ function drawGrid()
     // fill background 
     ctx.fillRect(0,0, w, h);
 
-    size = 20;
-    offset = 3;
-    var res = 1;
+    
 
     noise.setLayers(10, .4, .07);
 
@@ -35,7 +37,7 @@ function drawGrid()
     		var val = (noise.layerSimplex((x_loc + x) * res, (y_loc + y) * res) + 1) / 2 * 100;
     		val = parseInt(val);
 
-    		ctx.fillStyle = getColor(val);
+    		ctx.fillStyle = getrgbColor(val);
     		// ctx.strokeStyle = 'rgb(100,100,100)';
     		// ctx.fillStyle = 'green';
     		ctx.fillRect(x * (size + offset) , y * (size + offset), size, size);
@@ -43,4 +45,5 @@ function drawGrid()
     }
 
   }
+  //drawMiniMap();
 }

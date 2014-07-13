@@ -1,8 +1,9 @@
 console.log("keybindings");
 var canvas = document.getElementById("canvas");
-window.addEventListener("keypress", keyDown, false);
 
 
+var moveleft = false;
+var moveRight = false;
 
 function keyDown(e)
 {
@@ -15,3 +16,5 @@ function keyDown(e)
 	
 	drawGrid();
 }
+
+window.addEventListener("keypress", keyDown, false);
