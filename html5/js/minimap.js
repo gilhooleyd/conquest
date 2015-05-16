@@ -19,6 +19,7 @@ function drawMiniMap()
 {
 	console.log("Drawing");
 	var mm = document.getElementById("minimap");
+        mm.style.display = "block";
 	var w = mm.width;
 	var h = mm.height;
 	var mmctx = mm.getContext('2d');
