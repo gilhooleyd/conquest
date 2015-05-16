@@ -14,14 +14,15 @@ tree = [103, 131, 102, 1];
 mountain = [160, 160, 160, 1];
 snow = [230, 230, 230, 1];
 
-// takes a number from 0 to 100 and assigns a color to it
+// takes a number from 0 to 1 and assigns a color to it
 function getColor(val)
 {
-	if (val < 30) return deep;
-	if (val < 50) return shallow;
-	if (val < 55) return beach;
-	if (val < 70) return grass;
-	if (val < 80) return tree;
+        val = val*100;
+	if (val < 20) return deep;
+	if (val < 25) return shallow;
+	if (val < 32) return beach;
+	if (val < 50) return grass;
+	if (val < 75) return tree;
 	if (val < 90) return mountain;
 	if (val <= 100) return snow;
 	return deep;

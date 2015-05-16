@@ -1,7 +1,6 @@
 <html>
 
 	<head>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="js/sin.js"></script>
 		<script src="js/colormap.js"></script>
 		
@@ -13,13 +12,15 @@
 
 	</head>
 
-	<body onload="drawGrid()" >
+	<body onload="drawGrid()" style="text-align: center;" >
 
 		<canvas id="canvas" width=900 height=600 style="display: none;"> </canvas>
 		<canvas id="minimap" width=800 height=800 style="display: none;"> </canvas>
 		<canvas id="rolling" width=900 height=900 style="display: none;"> </canvas>
+		<canvas id="combined" width=900 height=900 style="display: none;"> </canvas>
+		<canvas id="color" width=900 height=900 style="display: none; margin: auto;"> </canvas>
 
-
+        <button type="button" onclick="randomIsland()"> Random Island </button>
 	</body>
 	<script src="js/keybindings.js"></script>
 </html>

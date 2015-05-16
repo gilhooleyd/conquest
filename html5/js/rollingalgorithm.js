@@ -28,7 +28,7 @@ function rollingAlgorithm(w, h, life, particles) {
         }
     }
 
-    // normalize the map
+    // normalize the map to return from 0 to 1
     var max = min = map[0][0];
     for (var i = 0; i < w; i++) {
         for (var j = 0; j < h; j++) {
@@ -38,7 +38,7 @@ function rollingAlgorithm(w, h, life, particles) {
         }
     }
     console.log("Max: " + max);
-    var mult = 255.0/max;
+    var mult = 1.0/max;
     for (var i = 0; i < w; i++) {
         for (var j = 0; j < h; j++) {
             map[i][j] *= mult;
